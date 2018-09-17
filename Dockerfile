@@ -19,7 +19,7 @@ RUN yum install -y ovirt-engine-wildfly ovirt-engine-wildfly-overlay
 RUN yum install -y ovirt-host-deploy ovirt-setup-lib ovirt-js-dependencies
 
 # Set Up Java and make sure openjdk is the java preferred
-RUN alternatives --config java && alternatives --config javac
+# RUN alternatives --config java && alternatives --config javac
 
 # Build product and install at $HOME/ovirt-engine, 
 # execute the following as unprivileged user while 
