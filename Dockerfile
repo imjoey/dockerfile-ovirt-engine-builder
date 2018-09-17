@@ -5,10 +5,10 @@ COPY ovirt-snapshots.repo /etc/yum.repos.d/
 
 RUN yum update -y
 
-RUN yum install -y git java-devel maven openssl postgresql-server postgresql-contrib \
+RUN yum install -y git java-devel maven openssl postgresql-server postgresql-contrib \
         m2crypto python-psycopg2 python-cheetah python-daemon libxml2-python \
         unzip pyflakes python-pep8 python-docker-py mailcap python-jinja2 \
-        python-dateutil gdeploy 
+    python-dateutil gdeploy 
 
 RUN ulimit -n 10240
 
