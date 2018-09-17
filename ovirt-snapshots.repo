@@ -1,0 +1,13 @@
+[ovirt-snapshots]
+name=local
+baseurl=http://resources.ovirt.org/pub/ovirt-master-snapshot/rpm/el$releasever
+enabled=1
+gpgcheck=0
+priority=10
+
+[ovirt-snapshots-static]
+name=local
+baseurl=http://resources.ovirt.org/pub/ovirt-master-snapshot-static/rpm/el$releasever
+enabled=1
+gpgcheck=0
+priority=10
