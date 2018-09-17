@@ -1,4 +1,4 @@
-FROM centos:7.5
+FROM centos:7.5.1804
 LABEL maintainer="majunjiev@gmail.com"
 
 COPY ovirt-snapshots.repo /etc/yum.repos.d/
