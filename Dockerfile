@@ -4,7 +4,7 @@ LABEL maintainer="majunjiev@gmail.com"
 COPY ovirt-snapshots.repo /etc/yum.repos.d/
 
 # Set up EPEL
-RUN yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 # Set Up Java
 RUN yum install -y java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64 maven
