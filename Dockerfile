@@ -12,7 +12,7 @@ RUN yum install -y git openssl postgresql-server postgresql-contrib \
         m2crypto python-psycopg2 python-cheetah python-daemon libxml2-python \
         unzip pyflakes python-pep8 python-docker-py mailcap python-jinja2 \
         python-dateutil gdeploy otopi python-flake8 python-flake8 \
-        python-docker-py python2-isort
+        python-docker-py python2-isort python-pip
 
 # WildFly 8.2 for oVirt 3.6+ development
 RUN yum install -y ovirt-engine-wildfly ovirt-engine-wildfly-overlay
