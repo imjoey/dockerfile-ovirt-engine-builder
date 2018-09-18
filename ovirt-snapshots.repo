@@ -1,6 +1,6 @@
 [ovirt-master-snapshot-static]
 name=Latest oVirt master additional nightly snapshot
-baseurl=http://resources.ovirt.org/pub/ovirt-master-snapshot-static/rpm/@DIST@$releasever/
+baseurl=http://resources.ovirt.org/pub/ovirt-master-snapshot-static/rpm/el$releasever/
 enabled=1
 skip_if_unavailable=1
 gpgcheck=0
