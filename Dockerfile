@@ -18,6 +18,9 @@ RUN yum install -y ovirt-engine-wildfly ovirt-engine-wildfly-overlay
 # Install the oVirt Packages
 RUN yum install -y ovirt-host-deploy ovirt-setup-lib ovirt-js-dependencies
 
+# Install base 
+RUN yum install -y kernel-devel kernel-header bind-utils g++ gcc make perl
+
 # Set Up Java and make sure openjdk is the java preferred
 # RUN alternatives --config java && alternatives --config javac
 
