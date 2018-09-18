@@ -5,7 +5,8 @@ COPY ovirt-snapshots.repo /etc/yum.repos.d/
 
 RUN yum update -y
 
-RUN yum install -y git java-devel maven openssl postgresql-server postgresql-contrib \
+# Install base packages
+RUN yum install -y git openssl postgresql-server postgresql-contrib \
         m2crypto python-psycopg2 python-cheetah python-daemon libxml2-python \
         unzip pyflakes python-pep8 python-docker-py mailcap python-jinja2 \
     python-dateutil gdeploy 
@@ -21,8 +22,8 @@ RUN yum install -y ovirt-host-deploy ovirt-setup-lib ovirt-js-dependencies
 # Install base 
 RUN yum install -y kernel-devel kernel-header bind-utils g++ gcc make perl
 
-# Set Up Java and make sure openjdk is the java preferred
-# RUN alternatives --config java && alternatives --config javac
+# Set Up Java
+RUN yum install -y java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64 maven
 
 # Build product and install at $HOME/ovirt-engine, 
 # execute the following as unprivileged user while 
