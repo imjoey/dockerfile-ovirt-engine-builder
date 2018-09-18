@@ -12,14 +12,14 @@ RUN yum install -y git openssl postgresql-server postgresql-contrib \
         m2crypto python-psycopg2 python-cheetah python-daemon libxml2-python \
         unzip pyflakes python-pep8 python-docker-py mailcap python-jinja2 \
         python-dateutil gdeploy otopi python-flake8 python-flake8 \
-        python-docker-py python2-isort ansible ovirt-ansible-roles \
-        ovirt-engine-metrics
+        python-docker-py python2-isort
 
 # WildFly 8.2 for oVirt 3.6+ development
 RUN yum install -y ovirt-engine-wildfly ovirt-engine-wildfly-overlay
 
 # Install the oVirt Packages
-RUN yum install -y ovirt-host-deploy ovirt-setup-lib ovirt-js-dependencies
+RUN pip install ansible && yum install -y ovirt-host-deploy ovirt-setup-lib \
+        ovirt-js-dependencies ovirt-ansible-roles ovirt-engine-metrics
 
 # Build product and install at $HOME/ovirt-engine, 
 # execute the following as unprivileged user while 
