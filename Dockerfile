@@ -28,9 +28,11 @@ RUN yum install -y java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64 mav
 # Build product and install at $HOME/ovirt-engine, 
 # execute the following as unprivileged user while 
 # residing within source repository
-RUN groupadd -r ovirt && useradd -r -g ovirt ovirt
+ENV HOME /home/ovirt
+RUN groupadd -r ovirt && useradd -r -g ovirt -d $HOME ovirt
+RUN chown -R ovirt:ovirt $HOME
 USER ovirt
-RUN mkdir -p /home/ovirt/.m2/repository
-WORKDIR /home/ovirt/ovirt-engine/
+RUN mkdir -p $HOME/.m2/repository
+WORKDIR $HOME/ovirt-engine/
 
-CMD [ "make", "install-dev", "PREFIX=\"/home/ovirt/ovirt-engine\"" ]
+CMD [ "make", "install-dev", "PREFIX=\"$HOME/ovirt-engine\"" ]
