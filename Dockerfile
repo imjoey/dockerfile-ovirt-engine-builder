@@ -30,6 +30,7 @@ RUN yum install -y java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64 mav
 # residing within source repository
 RUN groupadd -r ovirt && useradd -r -g ovirt ovirt
 USER ovirt
+RUN mkdir -p /home/ovirt/.m2/repository
 WORKDIR /home/ovirt/ovirt-engine/
 
 CMD [ "make", "install-dev", "PREFIX=\"/home/ovirt/ovirt-engine\"" ]
