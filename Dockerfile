@@ -29,7 +29,7 @@ RUN yum install -y java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64 mav
 # execute the following as unprivileged user while 
 # residing within source repository
 ENV HOME /home/ovirt
-RUN groupadd -r ovirt && useradd -r -g ovirt -d $HOME ovirt
+RUN groupadd -r ovirt && useradd -r -g ovirt -m ovirt
 RUN chown -R ovirt:ovirt $HOME
 USER ovirt
 RUN mkdir -p $HOME/.m2/repository
