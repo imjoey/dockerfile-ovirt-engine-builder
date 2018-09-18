@@ -17,6 +17,9 @@ RUN yum install -y git openssl postgresql-server postgresql-contrib \
 # WildFly 8.2 for oVirt 3.6+ development
 RUN yum install -y ovirt-engine-wildfly ovirt-engine-wildfly-overlay
 
+# Add pip
+RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" && python get-pip.py
+
 # Install the oVirt Packages
 RUN pip install ansible && yum install -y ovirt-host-deploy ovirt-setup-lib \
         ovirt-js-dependencies ovirt-ansible-roles ovirt-engine-metrics
