@@ -36,6 +36,6 @@ RUN groupadd -r ovirt && useradd -r -g ovirt -m ovirt
 RUN chown -R ovirt:ovirt $HOME
 USER ovirt
 RUN mkdir -p $HOME/.m2/
-WORKDIR $HOME/ovirt-engine/
+WORKDIR $HOME/git/
 
 CMD [ "make", "install-dev", "PREFIX=\"$HOME/ovirt-engine\"" ]
