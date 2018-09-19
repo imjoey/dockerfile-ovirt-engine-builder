@@ -24,6 +24,10 @@ RUN yum install -y ovirt-engine-wildfly ovirt-engine-wildfly-overlay
 RUN yum install -y ansible ovirt-host-deploy ovirt-setup-lib \
         ovirt-js-dependencies ovirt-ansible-roles ovirt-engine-metrics
 
+# Install PostgreSQL 9.6
+RUN yum install -y https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm \
+        postgresql96 postgresql96-server python-psycopg2
+
 # Build product and install at $HOME/ovirt-engine, 
 # execute the following as unprivileged user while 
 # residing within source repository
@@ -31,7 +35,7 @@ ENV HOME /home/ovirt
 RUN groupadd -r ovirt && useradd -r -g ovirt -m ovirt
 RUN chown -R ovirt:ovirt $HOME
 USER ovirt
-RUN mkdir -p $HOME/.m2/repository
+RUN mkdir -p $HOME/.m2/
 WORKDIR $HOME/ovirt-engine/
 
 CMD [ "make", "install-dev", "PREFIX=\"$HOME/ovirt-engine\"" ]
