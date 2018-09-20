@@ -7,7 +7,7 @@ COPY ovirt-snapshots.repo /etc/yum.repos.d/
 RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 # Install base packages
-RUN yum update && yum install -y git openssl postgresql-server postgresql-contrib \
+RUN yum update -y && yum install -y git openssl postgresql-server postgresql-contrib \
     kernel-devel kernel-header bind-utils g++ gcc make perl m2crypto python-psycopg2 \
     python-cheetah python-daemon libxml2-python unzip zip pyflakes python-pep8 \
     python-docker-py mailcap python-jinja2 python-dateutil gdeploy otopi \
