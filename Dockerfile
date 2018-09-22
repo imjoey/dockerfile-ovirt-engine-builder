@@ -25,7 +25,7 @@ RUN yum install -y ansible ovirt-host-deploy ovirt-setup-lib \
 
 # Install PostgreSQL 9.6
 RUN yum install -y https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm \
-    postgresql96 postgresql96-server python-psycopg2
+    postgresql96 postgresql96-server postgresql96-contrib python-psycopg2
 
 # Build product and install at $HOME/ovirt-engine, 
 # execute the following as unprivileged user while 
